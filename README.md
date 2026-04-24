@@ -219,7 +219,3 @@ Full Stack Developer | Backend & DevOps
 Este projeto foi desenvolvido com foco em boas práticas de backend e simulação de cenários reais de sistemas financeiros.
 
 ---
-
-## Se gostou do projeto
-
-Deixe uma estrela no repositório
