@@ -1,4 +1,4 @@
-# 💳 Bank API - Backend Financeiro (Java + Spring Boot)
+# Bank API - Backend Financeiro (Java + Spring Boot)
 
 API REST para gerenciamento de contas bancárias com suporte a transações financeiras, concorrência, idempotência e testes completos.
 
