@@ -25,14 +25,13 @@ class AccountConcurrencyTest {
     @Test
     void shouldHandleConcurrentWithdrawCorrectly() throws InterruptedException {
 
-        // ===== SETUP =====
         Account acc = new Account();
         acc.setOwner("Franciss");
         acc.setBalance(new BigDecimal("100"));
 
         acc = repository.save(acc);
 
-        final Long accountId = acc.getId(); // ✔ final para lambda
+        final Long accountId = acc.getId();
 
         int threads = 2;
 
@@ -42,11 +41,9 @@ class AccountConcurrencyTest {
         AtomicInteger success = new AtomicInteger(0);
         AtomicInteger fail = new AtomicInteger(0);
 
-        // ===== EXECUÇÃO CONCORRENTE =====
         for (int i = 0; i < threads; i++) {
             executor.submit(() -> {
                 try {
-                    // 🔥 CORREÇÃO AQUI
                     service.withdraw(accountId, new BigDecimal("100"), null);
 
                     success.incrementAndGet();
@@ -61,7 +58,6 @@ class AccountConcurrencyTest {
         latch.await();
         executor.shutdown();
 
-        // ===== VALIDAÇÃO =====
         Account updated = repository.findById(accountId).orElseThrow();
 
         System.out.println("Saldo final: " + updated.getBalance());
