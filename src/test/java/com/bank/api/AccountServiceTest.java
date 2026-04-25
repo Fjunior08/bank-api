@@ -34,7 +34,7 @@ class AccountServiceTest {
     void setup() {
         MockitoAnnotations.openMocks(this);
 
-        // 🔥 importante pra não bloquear os testes
+        //importante pra não bloquear os testes
         when(idempotencyRepository.existsById(any())).thenReturn(false);
     }
 

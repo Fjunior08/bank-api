@@ -1,4 +1,4 @@
-# 🧩 Análise Técnica – Identificação e Correção de Erros
+# Análise Técnica – Identificação e Correção de Erros
 
 ## Contexto do Problema
 

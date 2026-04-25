@@ -26,8 +26,8 @@ public class AccountService {
     private final IdempotencyRepository idempotencyRepository;
 
     public AccountService(AccountRepository repository,
-                          TransactionRepository transactionRepository,
-                          IdempotencyRepository idempotencyRepository) {
+        TransactionRepository transactionRepository,
+        IdempotencyRepository idempotencyRepository) {
         this.repository = repository;
         this.transactionRepository = transactionRepository;
         this.idempotencyRepository = idempotencyRepository;
